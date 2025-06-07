@@ -6,20 +6,24 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   </head>
   <body>
-    <div id="mydiv"></div>
-
     
+    <div id="mydiv"></div>
+        
 
     <script type="text/babel">
+
       function Page() {
         return (
           <div>
             <h1>Jogo</h1>
             <Time nome="Flamengo" /> X <Time nome="Vasco" />
+            <Time nome="Flamengo" /> X <Time nome="Vasco" />
+            <Time nome="Flamengo" /> X <Time nome="Vasco" />
+            
           </div>
         );
+        
       }
-
       function Time(props) {
         const [gols, setGols] = React.useState(0);
 
@@ -33,10 +37,15 @@
         );
 
       }
+      
 
       const container = document.getElementById("mydiv");
       const root = ReactDOM.createRoot(container);
       root.render(<Page />);
+
+
+
+      
     </script>
   </body>
 </html>
