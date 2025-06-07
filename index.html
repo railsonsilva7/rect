@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="mydiv"></div>
+
+    
+
+    <script type="text/babel">
+      function Page() {
+        return (
+          <div>
+            <h1>Jogo</h1>
+            <Time nome="Flamengo" /> X <Time nome="Vasco" />
+          </div>
+        );
+      }
+
+      function Time(props) {
+        const [gols, setGols] = React.useState(0);
+
+        function add() {
+          setGols(gols + 1);
+        }
+        return (
+          <button onClick={add}>
+            {props.nome} {gols}
+          </button>
+        );
+
+      }
+
+      const container = document.getElementById("mydiv");
+      const root = ReactDOM.createRoot(container);
+      root.render(<Page />);
+    </script>
+  </body>
+</html>
